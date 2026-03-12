@@ -1,0 +1,67 @@
+.serie-list-container {
+  max-width: 900px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.serie-list-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.serie-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.serie-table th,
+.serie-table td {
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.serie-table th {
+  font-weight: bold;
+  color: #555;
+}
+
+.acoes {
+  display: flex;
+  gap: 6px;
+}
+
+.btn-editar,
+.btn-excluir {
+  padding: 4px 12px;
+  font-size: 13px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #f5f5f5;
+}
+
+.btn-editar:hover {
+  background-color: #e0e0e0;
+}
+
+.btn-excluir:hover {
+  background-color: #f8d7da;
+}
+
+.btn-cadastrar {
+  margin-top: 10px;
+  padding: 8px 20px;
+  font-size: 14px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-cadastrar:hover {
+  background-color: #e0e0e0;
+}

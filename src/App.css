@@ -1,0 +1,11 @@
+.app {
+  max-width: 960px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.main-content {
+  padding: 20px;
+}
