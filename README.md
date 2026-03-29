@@ -1,97 +1,132 @@
-# Serie Journal - CRUD de Séries
+# Serie Journal - CRUD de Series
 
-## Identificação
+## Identificacao
 
-- **Aluno:** Felipe Fichtner
-- **Disciplina:** Desenvolvimento de Sistemas Frontend
-- **Fase:** 1
+- Aluno: Felipe Fichtner
+- Disciplina: Desenvolvimento de Sistemas Frontend
+- Fase: 2
 
-## descrição do Projeto
+## Descricao do Projeto
 
-projeto de gerenciamento de séries assistidas desenvolvido com React + Vite para a disciplina de Desenvolvimento de Sistemas Frontend (PUCRS Online). A aplicação permite cadastrar, visualizar, editar e excluir séries assistidas de forma dinâmica e intuitiva.
+Aplicacao React para gerenciamento de series assistidas com consumo de API REST.
+O projeto implementa rotas, formulario com validacao e operacoes CRUD completas
+usando os dados retornados pelo backend serieJournal-api.
 
-## Como executar o projeto
+## Requisitos
 
-1. Extraia o arquivo `.zip`
-2. Abra o terminal na pasta do projeto
-3. Instale as dependências:
+- Node.js 18+ (recomendado)
+- npm
+
+Destaques fase 2:
+- Integracao com Axios para requisicoes HTTP
+- Interface com Material UI (AppBar, Card, TextField, Button)
+- Testes de componentes com Vitest + React Testing Library
+- Tratamento de erros e estados de carregamento
+- API serieJournal-api em execucao
+
+## Como executar
+
+1. Instale e execute a API (backend):
 
 ```bash
+git clone https://github.com/adsPucrsOnline/DesenvolvimentoFrontend.git
+cd DesenvolvimentoFrontend/serieJournal-api
 npm install
+npm start
 ```
 
-4. Inicie o servidor de desenvolvimento:
+A API sobe por padrao em http://localhost:5000
+
 
 ```bash
+Execute em outra porta (ex: 5001) para evitar conflitos:
+
+```bash
+PORT=5001 npm start
+```
 npm run dev
 ```
 
-5. Acesse no navegador: `http://localhost:5173`
+3. Abra no navegador:
 
-## Estrutura do projeto
-
+npm run dev
 ```
+
+Se a API estiver em porta diferente de 5001, exporte a variavel de ambiente:
+
+```bash
+VITE_API_URL=http://localhost:PORTA npm run dev
+http://localhost:5173
+
+## Integracao com API
+
+http://localhost:5173
+
+## Rodando testes
+
+```bash
+npm run test
+```
+
+- GET /series
+- GET /series/:id
+O frontend usa Axios para consumir os endpoints REST:
+
+- POST /series
+- PUT /series
+- DELETE /series/:id
+
+Campos usados no payload:
+
+- title
+- seasons
+- releaseDate
+- director
+- production
+- category
+- watchedAt
+
+## Estrutura principal
+
+```text
 src/
-├── components/
-│   ├── NavBar/        → Componente de navegação com links para as páginas
-│   ├── SerieForm/     → Formulário para cadastro e edição de séries
-│   └── SerieList/     → Listagem de séries com opções de editar e excluir
-├── pages/
-│   ├── Home.jsx       → Página inicial de boas-vindas
-│   └── Sobre.jsx      → Página informativa sobre o projeto
-├── App.jsx            → Componente principal com rotas e gerenciamento de estado
-├── App.css            → Estilos do layout principal
-├── index.css          → Estilos globais
-└── main.jsx           → Ponto de entrada da aplicação
+  components/
+    NavBar/
+    SerieForm/
+    SerieList/
+  pages/
+    Home.jsx
+    Sobre.jsx
+  services/
+    seriesApi.js
+  App.jsx
 ```
 
-## Componentes
+## Funcionalidades
 
-### NavBar
-Componente de navegação presente em todas as páginas. Contém links para: Página Inicial, Sobre, Cadastrar Séries e Lista de Séries. Utiliza `react-router-dom` para navegação sem recarregamento da página.
+- Pagina inicial e pagina sobre
+- Cadastro de serie com validacao dos campos obrigatorios
+- Listagem de series vindas da API
+- Edicao de serie por rota /editar/:id
+- Exclusao com confirmacao
+- Feedback visual para erro e carregamento da API
 
-### SerieForm
-Componente de formulário para inclusão e edição de séries. Possui os seguintes campos obrigatórios:
-- **Título** (texto)
-- **Número de Temporadas** (número)
-- **Data de Lançamento da Temporada** (data)
-- **Diretor** (texto)
-- **Produtora** (texto)
-- **Categoria** (texto)
-- **Data em que assistiu** (data)
+## Prints da Aplicacao
+- Interface com Material UI Design
+- Requisicoes HTTP com Axios
+- Testes automatizados dos componentes
 
-Implementa validação de todos os campos com mensagens de erro visíveis ao usuário. Também é reutilizado para edição de séries existentes.
-
-### SerieList
-Componente de listagem que exibe todas as séries cadastradas em formato de tabela. Cada item possui botões de **Editar** e **Excluir**. A exclusão solicita confirmação do usuário antes de remover.
-
-## Páginas
-
-- **Página Inicial (`/`)**: Tela de boas-vindas ao usuário
-- **Sobre (`/sobre`)**: Informações sobre o projeto
-- **Cadastrar Séries (`/cadastrar`)**: Formulário para adicionar ou editar séries
-- **Lista de Séries (`/series`)**: Visualização completa com ações de edição e exclusão
-
-## Funcionalidades (CRUD)
-
-- **Criação**: Cadastro de novas séries via formulário com validação
-- **Leitura**: Listagem de todas as séries cadastradas
-- **Edição**: Alteração dos dados de uma série existente
-- **Exclusão**: Remoção de série com confirmação
-
-## Prints da Aplicação
-
-### Página Inicial
-![Página Inicial](./screenshots/home.png)
+### Pagina Inicial
+![Pagina Inicial](./screenshots/home.png)
 
 ### Sobre
 ![Sobre](./screenshots/sobre.png)
 
-### Cadastrar Séries
-![Cadastrar Séries](./screenshots/cadastrar.png)
+### Cadastrar Series
+![Cadastrar Series](./screenshots/cadastrar.png)
 
-### Lista de Séries
-![Lista de Séries](./screenshots/lista.png)
+### Lista de Series
+![Lista de Series](./screenshots/lista.png)
 
 ## Tecnologias
 

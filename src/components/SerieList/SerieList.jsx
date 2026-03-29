@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './SerieList.css';
 
 function SerieList({ series, onDelete, onEdit }) {
@@ -26,15 +27,15 @@ function SerieList({ series, onDelete, onEdit }) {
           <tbody>
             {series.map((serie) => (
               <tr key={serie.id}>
-                <td>{serie.titulo}</td>
-                <td>{serie.temporadas} temporadas</td>
-                <td>{serie.dataLancamento}</td>
-                <td>{serie.diretor}</td>
-                <td>{serie.produtora}</td>
-                <td>{serie.categoria}</td>
-                <td>{serie.dataAssistida}</td>
+                <td>{serie.title}</td>
+                <td>{serie.seasons} temporadas</td>
+                <td>{serie.releaseDate}</td>
+                <td>{serie.director}</td>
+                <td>{serie.production}</td>
+                <td>{serie.category}</td>
+                <td>{serie.watchedAt}</td>
                 <td className="acoes">
-                  <button className="btn-editar" onClick={() => onEdit(serie)}>
+                  <button className="btn-editar" onClick={() => onEdit(serie.id)}>
                     Editar
                   </button>
                   <button className="btn-excluir" onClick={() => onDelete(serie.id)}>
@@ -52,5 +53,22 @@ function SerieList({ series, onDelete, onEdit }) {
     </div>
   );
 }
+
+SerieList.propTypes = {
+  series: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      seasons: PropTypes.number.isRequired,
+      releaseDate: PropTypes.string.isRequired,
+      director: PropTypes.string.isRequired,
+      production: PropTypes.string.isRequired,
+      category: PropTypes.string.isRequired,
+      watchedAt: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  onDelete: PropTypes.func.isRequired,
+  onEdit: PropTypes.func.isRequired,
+};
 
 export default SerieList;

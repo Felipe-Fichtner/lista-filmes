@@ -9,3 +9,28 @@
 .main-content {
   padding: 20px;
 }
+
+.feedback-error {
+  margin: 0 auto 16px;
+  max-width: 860px;
+  border: 1px solid #f3b4b4;
+  background-color: #ffe6e6;
+  color: #8a1111;
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+
+.feedback-card {
+  margin: 24px auto;
+  max-width: 760px;
+  text-align: center;
+  border: 1px solid #d9dfea;
+  background-color: #f6f8fd;
+  border-radius: 12px;
+  padding: 28px;
+}
+
+.feedback-card h2 {
+  margin-bottom: 8px;
+  color: #24315c;
+}

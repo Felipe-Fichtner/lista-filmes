@@ -10,15 +10,23 @@
   gap: 20px;
   padding: 0;
   margin: 0;
+  flex-wrap: wrap;
 }
 
 .navbar-list li a {
   text-decoration: none;
   color: #333;
   font-size: 16px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
 }
 
 .navbar-list li a:hover {
-  text-decoration: underline;
-  color: #007bff;
+  background-color: #eceff5;
+}
+
+.navbar-list li a.active {
+  color: #fff;
+  background-color: #3f5db8;
 }
