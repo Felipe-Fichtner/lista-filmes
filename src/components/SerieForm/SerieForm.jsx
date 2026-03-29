@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import { TextField, Button, Box, Card, CardContent, Typography, Alert } from '@mui/material';
+import { TextField, Button, Box, Card, CardContent, Typography } from '@mui/material';
 import './SerieForm.css';
 
 function SerieForm({
@@ -71,91 +71,91 @@ function SerieForm({
             {title}
           </Typography>
           <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label>Título:</label>
-          <input
-            type="text"
-            value={titleValue}
-            onChange={(e) => setTitleValue(e.target.value)}
-            disabled={isSubmitting}
-          />
-          {errors.title && <span className="error">{errors.title}</span>}
-        </div>
+            <Box sx={{ display: 'grid', gap: 2 }}>
+              <TextField
+                label="Título"
+                value={titleValue}
+                onChange={(e) => setTitleValue(e.target.value)}
+                error={Boolean(errors.title)}
+                helperText={errors.title || ''}
+                disabled={isSubmitting}
+                fullWidth
+              />
 
-        <div className="form-group">
-          <label>Número de Temporadas:</label>
-          <input
-            type="number"
-            value={seasons}
-            onChange={(e) => setSeasons(e.target.value)}
-            min="1"
-            disabled={isSubmitting}
-          />
-          {errors.seasons && <span className="error">{errors.seasons}</span>}
-        </div>
+              <TextField
+                label="Número de Temporadas"
+                type="number"
+                value={seasons}
+                onChange={(e) => setSeasons(e.target.value)}
+                error={Boolean(errors.seasons)}
+                helperText={errors.seasons || ''}
+                disabled={isSubmitting}
+                inputProps={{ min: 1 }}
+                fullWidth
+              />
 
-        <div className="form-group">
-          <label>Data de Lançamento da Temporada:</label>
-          <input
-            type="date"
-            value={releaseDate}
-            onChange={(e) => setReleaseDate(e.target.value)}
-            disabled={isSubmitting}
-          />
-          {errors.releaseDate && <span className="error">{errors.releaseDate}</span>}
-        </div>
+              <TextField
+                label="Data de Lançamento da Temporada"
+                type="date"
+                value={releaseDate}
+                onChange={(e) => setReleaseDate(e.target.value)}
+                error={Boolean(errors.releaseDate)}
+                helperText={errors.releaseDate || ''}
+                disabled={isSubmitting}
+                InputLabelProps={{ shrink: true }}
+                fullWidth
+              />
 
-        <div className="form-group">
-          <label>Diretor:</label>
-          <input
-            type="text"
-            value={director}
-            onChange={(e) => setDirector(e.target.value)}
-            disabled={isSubmitting}
-          />
-          {errors.director && <span className="error">{errors.director}</span>}
-        </div>
+              <TextField
+                label="Diretor"
+                value={director}
+                onChange={(e) => setDirector(e.target.value)}
+                error={Boolean(errors.director)}
+                helperText={errors.director || ''}
+                disabled={isSubmitting}
+                fullWidth
+              />
 
-        <div className="form-group">
-          <label>Produtora:</label>
-          <input
-            type="text"
-            value={production}
-            onChange={(e) => setProduction(e.target.value)}
-            disabled={isSubmitting}
-          />
-          {errors.production && <span className="error">{errors.production}</span>}
-        </div>
+              <TextField
+                label="Produtora"
+                value={production}
+                onChange={(e) => setProduction(e.target.value)}
+                error={Boolean(errors.production)}
+                helperText={errors.production || ''}
+                disabled={isSubmitting}
+                fullWidth
+              />
 
-        <div className="form-group">
-          <label>Categoria:</label>
-          <input
-            type="text"
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-            disabled={isSubmitting}
-          />
-          {errors.category && <span className="error">{errors.category}</span>}
-        </div>
+              <TextField
+                label="Categoria"
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
+                error={Boolean(errors.category)}
+                helperText={errors.category || ''}
+                disabled={isSubmitting}
+                fullWidth
+              />
 
-        <div className="form-group">
-          <label>Data em que assistiu:</label>
-          <input
-            type="date"
-            value={watchedAt}
-            onChange={(e) => setWatchedAt(e.target.value)}
-            disabled={isSubmitting}
-          />
-          {errors.watchedAt && <span className="error">{errors.watchedAt}</span>}
-        </div>
+              <TextField
+                label="Data em que assistiu"
+                type="date"
+                value={watchedAt}
+                onChange={(e) => setWatchedAt(e.target.value)}
+                error={Boolean(errors.watchedAt)}
+                helperText={errors.watchedAt || ''}
+                disabled={isSubmitting}
+                InputLabelProps={{ shrink: true }}
+                fullWidth
+              />
 
-        <Button type="submit" variant="contained" fullWidth disabled={isSubmitting} sx={{ mt: 2, mb: 2 }}>
-          {isSubmitting ? 'Salvando...' : submitLabel}
-        </Button>
-      </form>
+              <Button type="submit" variant="contained" fullWidth disabled={isSubmitting} sx={{ mt: 1 }}>
+                {isSubmitting ? 'Salvando...' : submitLabel}
+              </Button>
+            </Box>
+          </form>
         </CardContent>
       </Card>
-    </div>
+    </Box>
   );
 }
 
@@ -174,13 +174,6 @@ SerieForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   submitLabel: PropTypes.string,
   title: PropTypes.string,
-};
-
-SerieForm.defaultProps = {
-  initialData: null,
-  isSubmitting: false,
-  submitLabel: 'Salvar',
-  title: 'Cadastrar série',
 };
 
 export default SerieForm;
