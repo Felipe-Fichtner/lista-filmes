@@ -16,13 +16,14 @@ usando os dados retornados pelo backend serieJournal-api.
 
 - Node.js 18+ (recomendado)
 - npm
+- API serieJournal-api em execucao
 
-Destaques fase 2:
+## Destaques da Fase 2
+
 - Integracao com Axios para requisicoes HTTP
 - Interface com Material UI (AppBar, Card, TextField, Button)
 - Testes de componentes com Vitest + React Testing Library
 - Tratamento de erros e estados de carregamento
-- API serieJournal-api em execucao
 
 ## Como executar
 
@@ -32,33 +33,23 @@ Destaques fase 2:
 git clone https://github.com/adsPucrsOnline/DesenvolvimentoFrontend.git
 cd DesenvolvimentoFrontend/serieJournal-api
 npm install
-npm start
-```
-
-A API sobe por padrao em http://localhost:5000
-
-
-```bash
-Execute em outra porta (ex: 5001) para evitar conflitos:
-
-```bash
 PORT=5001 npm start
 ```
-npm run dev
-```
 
-3. Abra no navegador:
-
-npm run dev
-```
-
-Se a API estiver em porta diferente de 5001, exporte a variavel de ambiente:
+2. Em outro terminal, execute o frontend:
 
 ```bash
-VITE_API_URL=http://localhost:PORTA npm run dev
-http://localhost:5173
+npm install
+npm run dev
+```
 
-## Integracao com API
+3. Se necessario, informe a URL da API no frontend:
+
+```bash
+VITE_API_URL=http://localhost:5001 npm run dev
+```
+
+4. Abra no navegador:
 
 http://localhost:5173
 
@@ -68,10 +59,12 @@ http://localhost:5173
 npm run test
 ```
 
-- GET /series
-- GET /series/:id
+## Integracao com API
+
 O frontend usa Axios para consumir os endpoints REST:
 
+- GET /series
+- GET /series/:id
 - POST /series
 - PUT /series
 - DELETE /series/:id
@@ -112,9 +105,6 @@ src/
 - Feedback visual para erro e carregamento da API
 
 ## Prints da Aplicacao
-- Interface com Material UI Design
-- Requisicoes HTTP com Axios
-- Testes automatizados dos componentes
 
 ### Pagina Inicial
 ![Pagina Inicial](./screenshots/home.png)
@@ -133,4 +123,8 @@ src/
 - React 18
 - Vite 5
 - React Router DOM
+- Axios
+- Material UI
+- Vitest
+- React Testing Library
 - JavaScript (JSX)

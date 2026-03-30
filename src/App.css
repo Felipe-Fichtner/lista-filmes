@@ -1,36 +1,52 @@
 .app {
-  max-width: 960px;
-  margin: 0 auto;
+  max-width: 1160px;
+  margin: 20px auto;
   min-height: 100vh;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  background: linear-gradient(165deg, rgba(250, 252, 255, 0.96), rgba(240, 246, 255, 0.95));
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 20px;
+  box-shadow: 0 18px 45px rgba(8, 17, 38, 0.28);
+  overflow: hidden;
 }
 
 .main-content {
-  padding: 20px;
+  padding: 16px 28px 32px;
 }
 
 .feedback-error {
   margin: 0 auto 16px;
-  max-width: 860px;
-  border: 1px solid #f3b4b4;
-  background-color: #ffe6e6;
-  color: #8a1111;
-  border-radius: 8px;
-  padding: 10px 14px;
+  max-width: 920px;
+  border: 1px solid #f0a6a6;
+  background-color: #ffe4e4;
+  color: #7a0e0e;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-weight: 600;
 }
 
 .feedback-card {
   margin: 24px auto;
-  max-width: 760px;
+  max-width: 820px;
   text-align: center;
-  border: 1px solid #d9dfea;
-  background-color: #f6f8fd;
-  border-radius: 12px;
+  border: 1px solid #cfdaf1;
+  background: linear-gradient(180deg, #f7faff 0%, #eef3fd 100%);
+  border-radius: 16px;
   padding: 28px;
 }
 
 .feedback-card h2 {
   margin-bottom: 8px;
   color: #24315c;
+}
+
+@media (max-width: 768px) {
+  .app {
+    margin: 0;
+    border-radius: 0;
+    min-height: 100vh;
+  }
+
+  .main-content {
+    padding: 12px 14px 22px;
+  }
 }

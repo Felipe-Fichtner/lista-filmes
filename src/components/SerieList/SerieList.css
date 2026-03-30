@@ -1,32 +1,45 @@
 .serie-list-container {
-  max-width: 900px;
-  margin: 40px auto;
+  max-width: 1040px;
+  margin: 26px auto;
   text-align: center;
+  padding: 18px;
+  border-radius: 18px;
+  background: linear-gradient(170deg, rgba(255, 255, 255, 0.92), rgba(240, 246, 255, 0.9));
+  border: 1px solid #d2dff5;
+  box-shadow: 0 12px 30px rgba(31, 56, 104, 0.12);
 }
 
 .serie-list-container h2 {
   margin-bottom: 20px;
-  font-size: 24px;
-  color: #333;
+  font-size: 38px;
+  color: #1c335d;
 }
 
 .serie-table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.75);
 }
 
 .serie-table th,
 .serie-table td {
-  padding: 8px 12px;
+  padding: 12px 12px;
   text-align: left;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #dce6f8;
   font-size: 14px;
 }
 
 .serie-table th {
-  font-weight: bold;
-  color: #555;
+  font-weight: 700;
+  color: #203e73;
+  background-color: #eef4ff;
+}
+
+.serie-table tbody tr:nth-child(even) {
+  background-color: rgba(243, 248, 255, 0.65);
 }
 
 .acoes {
@@ -36,32 +49,65 @@
 
 .btn-editar,
 .btn-excluir {
-  padding: 4px 12px;
+  padding: 6px 12px;
   font-size: 13px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 0;
+  border-radius: 8px;
+  font-weight: 700;
   cursor: pointer;
-  background-color: #f5f5f5;
+  color: #fff;
 }
 
 .btn-editar:hover {
-  background-color: #e0e0e0;
+  background-color: #315f9f;
 }
 
 .btn-excluir:hover {
-  background-color: #f8d7da;
+  background-color: #a22d3b;
+}
+
+.btn-editar {
+  background-color: #3f74be;
+}
+
+.btn-excluir {
+  background-color: #c04352;
 }
 
 .btn-cadastrar {
   margin-top: 10px;
-  padding: 8px 20px;
-  font-size: 14px;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 10px 22px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #295d9d 0%, #6c4eb7 100%);
+  border: 0;
+  border-radius: 10px;
   cursor: pointer;
+  box-shadow: 0 10px 20px rgba(63, 87, 167, 0.35);
 }
 
 .btn-cadastrar:hover {
-  background-color: #e0e0e0;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 860px) {
+  .serie-list-container {
+    padding: 10px;
+    border-radius: 14px;
+  }
+
+  .serie-list-container h2 {
+    font-size: 30px;
+  }
+
+  .serie-table th,
+  .serie-table td {
+    font-size: 12px;
+    padding: 9px 8px;
+  }
+
+  .acoes {
+    flex-direction: column;
+  }
 }
