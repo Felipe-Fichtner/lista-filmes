@@ -107,16 +107,16 @@ src/
 ## Prints da Aplicacao
 
 ### Pagina Inicial
-![Pagina Inicial](./screenshots/home.png)
+![Pagina Inicial](./screenshots/home-v2.png)
 
 ### Sobre
-![Sobre](./screenshots/sobre.png)
+![Sobre](./screenshots/sobre-v2.png)
 
 ### Cadastrar Series
-![Cadastrar Series](./screenshots/cadastrar.png)
+![Cadastrar Series](./screenshots/cadastrar-v2.png)
 
 ### Lista de Series
-![Lista de Series](./screenshots/lista.png)
+![Lista de Series](./screenshots/lista-v2.png)
 
 ## Tecnologias
 
